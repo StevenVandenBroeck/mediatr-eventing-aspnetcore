@@ -1,0 +1,41 @@
+﻿{
+    "version": "1.0.0-*",
+    "description": "Mediatr Eventing library unit tests.",
+    "authors": [ "stevenvandenbroeck" ],
+    "packOptions": {
+        "tags": [ "Eventing", "Mediatr", "Unit Tests" ],
+        "repository": {
+            "type": "git",
+            "url": "http://github.com/stevenvandenbroeck/mediatr-eventing-aspnetcore"
+        },
+        "projectUrl": "http://github.com/stevenvandenbroeck/mediatr-eventing-aspnetcore",
+        "licenseUrl": "http://github.com/stevenvandenbroeck/mediatr-eventing-aspnetcore/LICENSE.txt"
+    },
+    "testRunner": "xunit",
+    "dependencies": {
+        "NETStandard.Library": "1.6.1",
+        "xunit": "2.2.0-beta2-build3300",
+        "dotnet-test-xunit": "2.2.0-preview2-build1029",
+        "Moq": "4.6.38-alpha",
+        "Quixilver.Mediatr": "1.0.0",
+        "Microsoft.Extensions.DependencyInjection": "1.1.0",
+        "Microsoft.Extensions.Options": "1.1.0",
+        "MediatR": "2.1.0"
+    },
+    "frameworks": {
+        "netcoreapp1.0": {
+            "imports": [
+                "dnxcore50"
+            ],
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.0"
+                }
+            }
+        }
+    },
+    "tools": {
+        "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final"
+    }
+}
