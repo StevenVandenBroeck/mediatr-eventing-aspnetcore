@@ -4,6 +4,6 @@ namespace Quixilver.Eventing
 {
     public interface IEventingExceptionHandler
     {
-        void Handle(Exception ex);
+        void Handle(EventingException ex);
     }
 }

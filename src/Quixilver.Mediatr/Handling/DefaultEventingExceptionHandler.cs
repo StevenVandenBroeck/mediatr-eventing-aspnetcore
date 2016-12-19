@@ -5,9 +5,9 @@ namespace Quixilver.Eventing.Handling
 {
     public class DefaultEventingExceptionHandler : IEventingExceptionHandler
     {
-        public void Handle(Exception ex)
+        public void Handle(EventingException ex)
         {
-            Debug.WriteLine($"Exception publishing event(s) : {ex.Message}");
+            Debug.WriteLine(ex.Message);
         }
     }
 }

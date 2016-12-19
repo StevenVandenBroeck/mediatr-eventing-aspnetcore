@@ -5,7 +5,7 @@ namespace Quixilver.Eventing.UnitTests
 {
     public class TestExceptionHandler : IEventingExceptionHandler
     {
-        public void Handle(Exception ex)
+        public void Handle(EventingException ex)
         {
             Debug.WriteLine(ex.Message);
         }

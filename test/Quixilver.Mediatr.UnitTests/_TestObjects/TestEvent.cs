@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Quixilver.Eventing.UnitTests
 {
-    public class TestNotification : INotification
+    public class TestEvent : AppEvent
     {
         public string Message { get; set; }
     }

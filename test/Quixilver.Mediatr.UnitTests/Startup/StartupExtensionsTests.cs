@@ -3,7 +3,6 @@ using System.Linq;
 using Quixilver.Eventing.Handling;
 using Quixilver.Eventing.Publish;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using Xunit;
 using MediatR;
 
@@ -17,8 +16,7 @@ namespace Quixilver.Eventing.UnitTests.Startup
             var services = new ServiceCollection();
             services.AddEventing(opt => opt.RegisterExceptionHandler<TestExceptionHandler>());
 
-            var registrations = services.Where(sd => sd.ServiceType == typeof(IConfigureOptions<EventingOptions>))
-                                        .ToArray();
+            var registrations = services.Where(sd => sd.ServiceType == typeof(EventingOptions)).ToArray();
 
             Assert.Equal(1, registrations.Count());
             Assert.Equal(ServiceLifetime.Singleton, registrations[0].Lifetime);
@@ -30,8 +28,7 @@ namespace Quixilver.Eventing.UnitTests.Startup
             var services = new ServiceCollection();
             services.AddEventing();
 
-            var registrations = services.Where(sd => sd.ServiceType == typeof(IConfigureOptions<EventingOptions>))
-                                        .ToArray();
+            var registrations = services.Where(sd => sd.ServiceType == typeof(EventingOptions)).ToArray();
 
             Assert.Equal(1, registrations.Count());
             Assert.Equal(ServiceLifetime.Singleton, registrations[0].Lifetime);

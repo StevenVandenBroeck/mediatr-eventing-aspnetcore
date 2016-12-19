@@ -31,9 +31,10 @@ namespace Quixilver.Eventing
 
         private static void ConfigureOptions(IServiceCollection services, Action<EventingOptions> setupAction)
         {
-            services.Configure(setupAction);
-            var options = new EventingOptions();
+            //services.Configure(setupAction);
+            var options = new EventingOptions(services);
             setupAction.Invoke(options);
+            services.AddSingleton(options);
 
             var handlerType = options.ExceptionHandlerType ?? typeof(DefaultEventingExceptionHandler);
             services.AddScoped(typeof(IEventingExceptionHandler), handlerType);
