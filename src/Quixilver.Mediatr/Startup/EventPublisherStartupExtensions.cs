@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Quixilver.Eventing.Handling;
-using Quixilver.Eventing.Publish;
+using Quixilver.Eventing.Publishing;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 
